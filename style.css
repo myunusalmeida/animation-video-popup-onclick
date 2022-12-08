@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn .play {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #4564e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 15px 25px #4565e557;
+  transition: 0.5s;
+}
+
+.btn.active .play {
+  box-shadow: 0 0 0 150vh #4564e5;
+}
+
+.btn p {
+  font-weight: 500;
+  font-size: 1em;
+  color: #888888;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.clip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: 0.5s;
+}
+
+.clip.active {
+  transition-delay: 0.5s;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.clip video {
+  max-width: 80%;
+  outline: none;
+  border: 10px solid #ffffff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.clip .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #ffffff;
+  cursor: pointer;
+}
